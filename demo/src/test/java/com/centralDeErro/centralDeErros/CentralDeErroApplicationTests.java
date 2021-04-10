@@ -1,4 +1,4 @@
-package com.centralDeErro.centralDeErro;
+package com.centralDeErro.centralDeErros;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
