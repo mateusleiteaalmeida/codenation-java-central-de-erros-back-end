@@ -35,6 +35,6 @@ public class UserService implements UserServiceInterface, UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return null;
+        return (UserDetails) userRepository.findByEmail(s).get();
     }
 }
