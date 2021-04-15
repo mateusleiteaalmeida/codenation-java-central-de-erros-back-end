@@ -15,15 +15,16 @@ import javax.validation.constraints.Email;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Data
-@Table(name="user_test")
-
+@Table(name="users")
 public class User implements UserDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -43,6 +44,9 @@ public class User implements UserDetails {
     @NotNull
     @Size(max = 100)
     private String password;
+
+    @OneToMany(mappedBy = "user")
+    private List<Log> logs;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -73,4 +77,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }
