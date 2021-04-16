@@ -12,16 +12,18 @@ import java.util.Optional;
 @Repository
 public interface LogRepository extends JpaRepository<Log, Long> {
 
-    Optional<Log> findById(Long id);
+    List<Log> findLogByUserId(Long id);
 
-    List<Log> findByLevel(String level);
+    Optional<Log> findLogById(Long id);
 
-    List<Log> findByDescription(String description);
+    List<Log> findLogByLevel(String level);
 
-    List<Log> findByLog(String log);
+    List<Log> findLogByDescription(String description);
 
-    List<Log> findByOrigin(String origin);
+    List<Log> findLogByLog(String log);
 
-    List<Log> findByDate(LocalDateTime date);
+    List<Log> findLogByOrigin(String origin);
+
+    List<Log> findLogByDate(LocalDateTime date);
 
 }

@@ -13,6 +13,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 
+import java.util.ArrayList;
+
 
 @EnableWebSecurity
 @EnableAuthorizationServer
@@ -22,6 +24,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserDetailsService userService;
+
+    private final String[] NO_AUTHENTICATED_PATHS = {"/users", "/h2/**"};
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -36,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/users", "/h2/**");
+        web.ignoring().antMatchers(NO_AUTHENTICATED_PATHS);
     }
 
     @Bean

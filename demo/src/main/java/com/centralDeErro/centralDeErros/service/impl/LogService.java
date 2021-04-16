@@ -16,34 +16,38 @@ public class LogService implements LogServiceInterface {
     @Autowired
     private LogRepository logRepository;
 
-
     @Override
-    public Optional<Log> findById(Long id) {
-        return logRepository.findById(id);
+    public List<Log> findLogByUserId(Long userId) {
+        return logRepository.findLogByUserId(userId);
     }
 
     @Override
-    public List<Log> findByLevel(String level) {
-        return logRepository.findByLevel(level);
+    public Optional<Log> findLogById(Long id) {
+        return logRepository.findLogById(id);
     }
 
     @Override
-    public List<Log> findByDescription(String description) {
-        return logRepository.findByDescription(description);
+    public List<Log> findLogByLevel(String level) {
+        return logRepository.findLogByLevel(level);
     }
 
     @Override
-    public List<Log> findByLog(String log) {
-        return logRepository.findByLog(log);
+    public List<Log> findLogByDescription(String description) {
+        return logRepository.findLogByDescription(description);
     }
 
     @Override
-    public List<Log> findByOrigin(String origin) {
-        return logRepository.findByOrigin(origin);
+    public List<Log> findLogByLog(String log) {
+        return logRepository.findLogByLog(log);
     }
 
     @Override
-    public List<Log> findByDate(LocalDateTime date) {
-        return logRepository.findByDate(date);
+    public List<Log> findLogByOrigin(String origin) {
+        return logRepository.findLogByOrigin(origin);
+    }
+
+    @Override
+    public List<Log> findLogByDate(LocalDateTime date) {
+        return logRepository.findLogByDate(date);
     }
 }

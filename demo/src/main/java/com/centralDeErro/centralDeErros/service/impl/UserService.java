@@ -37,4 +37,5 @@ public class UserService implements UserServiceInterface, UserDetailsService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return (UserDetails) userRepository.findByEmail(s).get();
     }
+
 }
