@@ -44,7 +44,4 @@ public class Log {
     @CreatedDate
     private LocalDateTime date;
 
-    @ManyToOne
-    private User user;
-
 }

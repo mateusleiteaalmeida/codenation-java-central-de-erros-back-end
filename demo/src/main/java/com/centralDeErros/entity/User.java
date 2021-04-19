@@ -47,9 +47,6 @@ public class User implements UserDetails {
     @Size(max = 100)
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<Log> logs;
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority("MANAGER"));
