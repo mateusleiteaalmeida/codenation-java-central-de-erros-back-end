@@ -1,7 +1,7 @@
-package com.centralDeErro.centralDeErros.service.interfaces;
+package com.centralDeErros.service.interfaces;
 
 
-import com.centralDeErro.centralDeErros.entity.User;
+import com.centralDeErros.entity.User;
 
 import java.util.List;
 import java.util.Optional;

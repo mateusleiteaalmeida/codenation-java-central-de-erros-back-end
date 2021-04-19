@@ -1,8 +1,8 @@
-package com.centralDeErro.centralDeErros.service.impl;
+package com.centralDeErros.service.impl;
 
-import com.centralDeErro.centralDeErros.entity.User;
-import com.centralDeErro.centralDeErros.repository.UserRepository;
-import com.centralDeErro.centralDeErros.service.interfaces.UserServiceInterface;
+import com.centralDeErros.entity.User;
+import com.centralDeErros.repository.UserRepository;
+import com.centralDeErros.service.interfaces.UserServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,4 +1,4 @@
-package com.centralDeErro.centralDeErros.security;
+package com.centralDeErros.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userService;
 
-    private final String[] NO_AUTHENTICATED_PATHS = {"/users", "/h2/**"};
+    private final String[] NO_AUTHENTICATED_PATHS = {"/users", "/logs", "/h2/**"};
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

@@ -1,13 +1,13 @@
-package com.centralDeErro.centralDeErros;
+package com.centralDeErros;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CentralDeErroApplication {
+public class CentralDeErrosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CentralDeErroApplication.class, args);
+		SpringApplication.run(CentralDeErrosApplication.class, args);
 	}
 
 }

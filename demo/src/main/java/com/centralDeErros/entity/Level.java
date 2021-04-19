@@ -1,4 +1,4 @@
-package com.centralDeErro.centralDeErros.entity;
+package com.centralDeErros.entity;
 
 public enum Level {
     ERROR, WARNING, INFO;

@@ -1,14 +1,12 @@
-package com.centralDeErro.centralDeErros.controller;
+package com.centralDeErros.controller;
 
-import com.centralDeErro.centralDeErros.entity.Log;
-import com.centralDeErro.centralDeErros.entity.User;
-import com.centralDeErro.centralDeErros.repository.UserRepository;
-import com.centralDeErro.centralDeErros.service.impl.UserService;
+import com.centralDeErros.entity.User;
+import com.centralDeErros.repository.UserRepository;
+import com.centralDeErros.service.impl.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,7 +34,5 @@ public class UserController {
         User userRegistered = userRepository.save(user);
         return userRepository.save(userRegistered);
     }
-
-
 
 }

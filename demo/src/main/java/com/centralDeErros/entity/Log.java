@@ -1,4 +1,4 @@
-package com.centralDeErro.centralDeErros.entity;
+package com.centralDeErros.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
