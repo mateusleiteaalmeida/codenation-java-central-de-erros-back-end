@@ -3,10 +3,16 @@ package com.centralDeErros.controller;
 import com.centralDeErros.entity.Log;
 import com.centralDeErros.service.impl.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -17,8 +23,9 @@ public class LogController {
     private LogService logService;
 
     @GetMapping
-    public List<Log> findAllLogs(Pageable pageable) {
-        return logService.findAll(pageable);
+    public List<Log> findAllLogs(@RequestParam(defaultValue = "0") Integer pageNo, @RequestParam(defaultValue = "10") Integer pageSize, @RequestParam(defaultValue = "id") String sortBy) {
+        Pageable paging = (PageRequest.of(pageNo, pageSize, Sort.by(sortBy)));
+        List<Log> list = logService.findAll(paging);
+        return list;
     }
-
 }
