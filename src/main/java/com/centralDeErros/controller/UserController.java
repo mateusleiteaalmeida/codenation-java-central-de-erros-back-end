@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/")
+@RequestMapping("/users")
 public class UserController {
 
     @Autowired
