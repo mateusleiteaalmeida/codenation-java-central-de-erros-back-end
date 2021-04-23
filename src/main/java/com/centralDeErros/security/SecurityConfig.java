@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userService;
 
-    private final String[] NO_AUTHENTICATED_PATHS = {"/users", "/logs", "/h2/**"};
+    private final String[] NO_AUTHENTICATED_PATHS = {"/users", "/logs", "/h2/**", "/"};
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
