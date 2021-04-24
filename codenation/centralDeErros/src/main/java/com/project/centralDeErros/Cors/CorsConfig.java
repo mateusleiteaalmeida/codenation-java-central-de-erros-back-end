@@ -1,4 +1,4 @@
-package com.centralDeErros.cors;
+package com.project.centralDeErros.Cors;
 
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -24,4 +24,5 @@ public class CorsConfig {
         bean.setOrder(0);
         return bean;
     }
+
 }
