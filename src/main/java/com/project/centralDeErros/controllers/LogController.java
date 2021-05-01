@@ -1,5 +1,6 @@
 package com.project.centralDeErros.controllers;
 
+import com.project.centralDeErros.controllers.exceptions.ResourceNotFoundException;
 import com.project.centralDeErros.dto.LogDto;
 import com.project.centralDeErros.entity.Level;
 import com.project.centralDeErros.entity.Log;
@@ -32,7 +33,11 @@ public class LogController {
                                     @RequestParam(defaultValue = "10") Integer pageSize,
                                     @RequestParam(defaultValue = "id") String sortBy) {
         Pageable paging = (PageRequest.of(pageNo, pageSize, Sort.by(sortBy)));
-        return logService.findAll(paging);
+        try {
+            return logService.findAll(paging);
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("logs");
+        }
     }
 
     @GetMapping("/id/{id}")
@@ -40,7 +45,11 @@ public class LogController {
     @ApiResponses(value = {@ApiResponse(code = 404, message = "Log não encontrado"),
             @ApiResponse(code = 200, message = "Log retornado com sucesso")})
     public Optional<Log> findById(@PathVariable Long id) {
-        return logService.findById(id);
+        try {
+            return logService.findById(id);
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("log");
+        }
     }
 
     @GetMapping("/level/{level}")
@@ -48,7 +57,11 @@ public class LogController {
     @ApiResponses(value = {@ApiResponse(code = 404, message = "Logs não encontrados"),
             @ApiResponse(code = 200, message = "Logs retornados com sucesso")})
     public Page<LogDto> findByLevel(@PathVariable Level level, Pageable pageable) {
-        return logService.findByLevel(level, pageable);
+        try {
+            return logService.findByLevel(level, pageable);
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("logs");
+        }
     }
 
     @GetMapping("/description/{description}")
@@ -56,7 +69,11 @@ public class LogController {
     @ApiResponses(value = {@ApiResponse(code = 404, message = "Logs não encontrados"),
             @ApiResponse(code = 200, message = "Logs retornados com sucesso")})
     public Page<LogDto> findByDescription(@PathVariable String description, Pageable pageable) {
-        return logService.findByDescriptionContaining(description, pageable);
+        try {
+            return logService.findByDescriptionContaining(description, pageable);
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("logs");
+        }
     }
 
     @GetMapping("/origin/{origin}")
@@ -64,7 +81,11 @@ public class LogController {
     @ApiResponses(value = {@ApiResponse(code = 404, message = "Logs não encontrados"),
             @ApiResponse(code = 200, message = "Logs retornados com sucesso")})
     public Page<LogDto> findByOrigin(@PathVariable String origin, Pageable pageable) {
-        return logService.findByOrigin(origin, pageable);
+        try {
+            return logService.findByOrigin(origin, pageable);
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("logs");
+        }
     }
 
     @GetMapping("/date/{date}")
@@ -72,7 +93,11 @@ public class LogController {
     @ApiResponses(value = {@ApiResponse(code = 404, message = "Logs não encontrados"),
             @ApiResponse(code = 200, message = "Logs retornados com sucesso")})
     public Page<LogDto> findByDate(@PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate date, Pageable pageable) {
-        return logService.findByDate(date, pageable);
+        try {
+            return logService.findByDate(date, pageable);
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("logs");
+        }
     }
 
     @PostMapping("/register")
