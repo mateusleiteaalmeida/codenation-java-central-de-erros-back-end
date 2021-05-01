@@ -47,8 +47,8 @@ public class LogController {
     @ApiOperation("Lista o log de erro pelo id")
     @ApiResponses(value = {@ApiResponse(code = 404, message = "Log não encontrado"),
             @ApiResponse(code = 200, message = "Log retornado com sucesso")})
-    public Optional<Log> findById(@PathVariable Long id, Pageable pageable) {
-        return logService.findById(id, pageable);
+    public Optional<Log> findById(@PathVariable Long id) {
+        return logService.findById(id);
     }
 
     @GetMapping("/level/{level}")
