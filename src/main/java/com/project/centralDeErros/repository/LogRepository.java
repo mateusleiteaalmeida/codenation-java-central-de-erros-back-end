@@ -14,7 +14,7 @@ public interface LogRepository extends JpaRepository<Log, Long> {
 
     Page<Log> findAll(Pageable pageable);
 
-    Optional<Log> findById(Long id, Pageable pageable);
+    Optional<Log> findById(Long id);
 
     Page<Log> findByLevel(Level level, Pageable pageable);
 

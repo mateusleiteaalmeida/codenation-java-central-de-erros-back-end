@@ -12,7 +12,7 @@ public interface LogServiceInterface {
 
     List<Log> findAll(Pageable pageable);
 
-    Optional<Log> findById(Long id, Pageable pageable);
+    Optional<Log> findById(Long id);
 
     List<Log> findByLevel(Level level, Pageable pageable);
 

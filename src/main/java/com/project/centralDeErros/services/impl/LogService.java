@@ -24,8 +24,8 @@ public class LogService implements LogServiceInterface {
     }
 
     @Override
-    public Optional<Log> findById(Long id, Pageable pageable) {
-        return logRepository.findById(id, pageable);
+    public Optional<Log> findById(Long id) {
+        return logRepository.findById(id);
     }
 
     @Override
