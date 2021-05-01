@@ -8,7 +8,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @AllArgsConstructor
@@ -34,5 +34,5 @@ public class Log {
     private String origin;
 
     @CreatedDate
-    private LocalDateTime date;
+    private LocalDate date;
 }

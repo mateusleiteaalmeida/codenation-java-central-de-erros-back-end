@@ -5,7 +5,7 @@ import com.project.centralDeErros.entity.Level;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -14,5 +14,5 @@ public class LogDto {
     private Level level;
     private String description;
     private String origin;
-    private LocalDateTime date;
+    private LocalDate date;
 }
