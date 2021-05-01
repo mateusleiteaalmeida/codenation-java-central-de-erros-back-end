@@ -40,8 +40,8 @@ public class LogController {
     }
 
     @GetMapping("/id/{id}")
-    public Optional<Log> findById(@PathVariable Long id, Pageable pageable) {
-        return logService.findById(id, pageable);
+    public Optional<Log> findById(@PathVariable Long id) {
+        return logService.findById(id);
     }
 
     @GetMapping("/level/{level}")
