@@ -1,5 +1,6 @@
 package com.project.centralDeErros.controllers;
 
+import com.project.centralDeErros.controllers.exceptions.ResourceNotFoundException;
 import com.project.centralDeErros.entity.User;
 import com.project.centralDeErros.repository.UserRepository;
 import com.project.centralDeErros.services.impl.UserService;
@@ -35,7 +36,11 @@ public class UserController {
     @ApiOperation("Valida se o usuário existe")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Usuários retornados com sucesso")})
     public Optional<User> findUserByEmail(@PathVariable("email") String email) {
-        return userService.findByEmail(email);
+        try {
+            return userService.findByEmail(email);
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("usuário");
+        }
     }
 
     @PostMapping("/register")
