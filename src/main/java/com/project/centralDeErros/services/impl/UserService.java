@@ -22,14 +22,14 @@ public class UserService implements UserServiceInterface, UserDetailsService {
         return userRepository.findByEmail(email);
     }
 
-//    @Override
-//    public <S extends User> S save(S s) {
-//        return userRepository.save(s);
-//    }
-
     @Override
     public List<User> findAll() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public User save(User user) {
+        return userRepository.save(user);
     }
 
     @Override

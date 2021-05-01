@@ -26,15 +26,14 @@ public class UserController {
         return userService.findAll();
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("/email/{email}")
     public Optional<User> findUserByEmail(@PathVariable("email") String email) {
         return userService.findByEmail(email);
     }
 
     @PostMapping("/register")
     public User registerUser (@RequestBody User user) {
-        User userRegistered = userRepository.save(user);
-        return userRepository.save(userRegistered);
+        return userService.save(user);
     }
 
 }
