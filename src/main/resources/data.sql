@@ -1,7 +1,7 @@
 INSERT INTO users
 VALUES
-(1, 'user@email.com', 'Nome Sobrenome', 'senha123'),
-(2, 'carol@email.com', 'Ana Carolina Andrade', 'senha123'),
+(1, 'macgyver@email.com', 'MacGyver', 'senha123'),
+(2, 'carol@email.com', 'Ana Caroline Andrade', 'senha123'),
 (3, 'filipi@email.com', 'Filipi Firmino', 'senha123'),
 (4, 'mateus@email.com', 'Mateus Leite', 'senha123');
 
