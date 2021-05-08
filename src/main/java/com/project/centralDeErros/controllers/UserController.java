@@ -29,8 +29,6 @@ public class UserController {
     @Autowired
     private LogService logService;
 
-//    @Autowired
-//    private UserRepository userRepository;
 
     @GetMapping
     @ApiOperation("Lista todos os usuários")
