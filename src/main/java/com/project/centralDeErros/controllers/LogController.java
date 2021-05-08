@@ -30,7 +30,7 @@ public class LogController {
     @ApiOperation("Lista todos os logs de erros")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Logs retornados com sucesso")})
     public Page<LogDto> findAllLogs(@RequestParam(defaultValue = "0") Integer pageNo,
-                                    @RequestParam(defaultValue = "10") Integer pageSize,
+                                    @RequestParam(defaultValue = "4") Integer pageSize,
                                     @RequestParam(defaultValue = "id") String sortBy) {
         Pageable paging = (PageRequest.of(pageNo, pageSize, Sort.by(sortBy)));
         try {
