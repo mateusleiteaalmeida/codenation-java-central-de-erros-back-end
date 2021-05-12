@@ -6,9 +6,7 @@ import com.project.centralDeErros.entity.User;
 import com.project.centralDeErros.repository.UserRepository;
 import com.project.centralDeErros.services.impl.LogService;
 import com.project.centralDeErros.services.impl.UserService;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -50,6 +48,9 @@ public class UserController {
 
     @PostMapping("/register")
     @ApiOperation("Cria um novo usuário")
+    @ApiImplicitParams(value = {
+            @ApiImplicitParam(name = "Authorization", defaultValue = "Liberar"),
+    })
     @ApiResponses(value = {@ApiResponse(code = 201, message = "Usuário criado com sucesso")})
     public User registerUser (@RequestBody User user) {
         return userService.save(user);
@@ -58,6 +59,7 @@ public class UserController {
     @PostMapping("/login")
     @ApiOperation("Login do usuario")
     @ApiResponses(value = {@ApiResponse(code = 401, message = "Usuario não cadastrado")})
+
     public Page<LogDto> login (String userEmail, String senha, Pageable pageable) {
             Optional<User> user = userService.findByEmail(userEmail);
            String userBanco = user.get().getPassword();

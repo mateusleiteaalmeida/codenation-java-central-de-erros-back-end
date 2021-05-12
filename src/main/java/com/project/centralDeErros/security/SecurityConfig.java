@@ -36,9 +36,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManager();
     }
 
+    // ignora o acesso para o swagger
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers();
+        web.ignoring().antMatchers(
+                "/configuration/ui",
+                "/swagger-resources/**",
+                "/configuration/security",
+                "/swagger-ui.html",
+                "/webjars/**",
+                "/v2/api-docs");
     }
 
     @Bean
