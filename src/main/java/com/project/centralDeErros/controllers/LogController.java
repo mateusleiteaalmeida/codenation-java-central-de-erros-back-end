@@ -5,9 +5,7 @@ import com.project.centralDeErros.dto.LogDto;
 import com.project.centralDeErros.entity.Level;
 import com.project.centralDeErros.entity.Log;
 import com.project.centralDeErros.services.impl.LogService;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -29,6 +27,11 @@ public class LogController {
     @GetMapping
     @ApiOperation("Lista todos os logs de erros")
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Logs retornados com sucesso")})
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pageNo", required = true, dataType = "Integer"),
+            @ApiImplicitParam(name = "pageSize", required = true, dataType = "Integer"),
+            @ApiImplicitParam(name = "psortBy", required = true, dataType = "String"),
+    })
     public Page<LogDto> findAllLogs(@RequestParam(defaultValue = "0") Integer pageNo,
                                     @RequestParam(defaultValue = "4") Integer pageSize,
                                     @RequestParam(defaultValue = "id") String sortBy) {
