@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="./assets/image/siren.gif">
+  <img src="./assets/siren.gif">
   <br />
   Central de erros
 </h1>
