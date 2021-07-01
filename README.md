@@ -5,16 +5,6 @@
 </h1>
 
 
-## Tecnologias
-
-Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
-
-- [Spring Boot](https://spring.io/)
-- [Hibernate](https://hibernate.org/)
-- [H2](https://www.h2database.com/html/main.html)
-- [Swagger](https://swagger.io/)
-
-
 ## Projeto
 
 Este é um projeto desenvolvido durante a aceleração em Java da Codenation. O projeto busca implementar uma API Rest para centralizar o registro de erros de aplicações. Este repositório contém a parte do back-end da aplicação.
@@ -32,6 +22,16 @@ A API apresenta as seguintes funcionalidades:
 </ul>
 
 O repositório do front-end da aplicação pode ser acesso nesse [link](https://github.com/mateusleiteaalmeida/codenation-react-central-de-erros-front-end).
+
+
+## Tecnologias
+
+Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+- [Spring Boot](https://spring.io/)
+- [Hibernate](https://hibernate.org/)
+- [H2](https://www.h2database.com/html/main.html)
+- [Swagger](https://swagger.io/)
 
 
 ## Colaboradores
